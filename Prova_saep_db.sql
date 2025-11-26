@@ -42,17 +42,16 @@ CREATE TABLE produtos (
   resolucao_tela VARCHAR(50),
   capacidade_armazenamento VARCHAR(50),
   conectividade VARCHAR(50),
-  unidade_medida VARCHAR(20),
   quantidade_minima INT DEFAULT 0,
   quantidade_atual INT DEFAULT 0
 );
 
 -- Produtos iniciais
 -- Produtos iniciais
-INSERT INTO produtos (nome, descricao, categoria, tensao, dimensoes, resolucao_tela, capacidade_armazenamento, conectividade, unidade_medida, quantidade_minima, quantidade_atual) VALUES
-('Celular', 'Smartphone com tela de 6.5 polegadas', 'Eletrônicos', 'Bivolt', '16x7x0.8 cm', '1080x2400', '128GB', 'Wi-Fi, 4G', 'Unidade', 10, 25),
-('Tablet', 'Tablet com tela de 10 polegadas', 'Eletrônicos', 'Bivolt', '24x16x0.7 cm', '1920x1200', '64GB', 'Wi-Fi', 'Unidade', 5, 8),
-('Computador', 'Computador desktop com processador Intel i5', 'Informática', 'Bivolt', '40x20x35 cm', 'N/A', '1TB', 'Ethernet, Wi-Fi', 'Unidade', 8, 10);
+INSERT INTO produtos (nome, descricao, categoria, tensao, dimensoes, resolucao_tela, capacidade_armazenamento, conectividade, quantidade_minima, quantidade_atual) VALUES
+('Celular', 'Smartphone com tela de 6.5 polegadas', 'Eletrônicos', 'Bivolt', '16x7x0.8 cm', '1080x2400', '128GB', 'Wi-Fi, 4G', 10, 25),
+('Tablet', 'Tablet com tela de 10 polegadas', 'Eletrônicos', 'Bivolt', '24x16x0.7 cm', '1920x1200', '64GB', 'Wi-Fi', 5, 8),
+('Computador', 'Computador desktop com processador Intel i5', 'Informática', 'Bivolt', '40x20x35 cm', 'N/A', '1TB', 'Ethernet, Wi-Fi', 8, 10);
 
 -- ================================================
 -- TABELA DE MOVIMENTAÇÕES
