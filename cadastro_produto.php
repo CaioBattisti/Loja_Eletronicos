@@ -51,11 +51,8 @@ if (isset($_POST['salvar'])) {
     }
 
     if ($conn->query($sql)) {
-        $msg = "Produto $acao com sucesso!";
-        $tipoMsg = "sucesso";
-
         // Redirecionar para limpar o formulário e voltar ao estado de "Adicionar Novo Produto"
-        header("Location: cadastro_produto.php");
+        header("Location: cadastro_produto.php?msg=Produto $acao com sucesso!&tipoMsg=sucesso");
         exit;
     } else {
         $msg = "Erro ao salvar o produto.";
@@ -107,6 +104,12 @@ if (isset($_GET['editar'])) {
         $produtoEdit = $query->fetch_assoc();
     }
 }
+
+// Exibir mensagens de redirecionamento
+if (isset($_GET['msg']) && isset($_GET['tipoMsg'])) {
+    $msg = $_GET['msg'];
+    $tipoMsg = $_GET['tipoMsg'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -115,6 +118,31 @@ if (isset($_GET['editar'])) {
 <meta charset="UTF-8">
 <title>Cadastro de Produtos</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.msg {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.msg.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.msg.erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+.msg.alerta {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+</style>
 </head>
 <body>
 <div class="container">
