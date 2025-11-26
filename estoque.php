@@ -58,7 +58,7 @@ $produtos = $conn->query("SELECT * FROM produtos");
 // LISTAGEM DO HISTÓRICO DE MOVIMENTAÇÕES
 // ===============================================
 $movimentacoes = $conn->query("
-    SELECT m.*, p.nome AS produto_nome, u.nome AS usuario
+    SELECT m.*, p.nome AS produto_nome, u.nome AS usuario_nome
     FROM movimentacoes m
     JOIN produtos p ON m.id_produto = p.id_produto
     JOIN usuarios u ON m.id_usuario = u.id_usuario
@@ -142,7 +142,7 @@ $movimentacoes = $conn->query("
     <th>Data</th>
     <th>Usuário</th>
 </tr>
-<?php if ($movimentacoes->num_rows > 0): ?>
+<?php if ($movimentacoes && $movimentacoes->num_rows > 0): ?>
 <?php while ($m = $movimentacoes->fetch_assoc()): ?>
 <tr>
     <td><?= $m['id_movimentacao'] ?></td>
@@ -150,7 +150,7 @@ $movimentacoes = $conn->query("
     <td><?= htmlspecialchars($m['tipo']) ?></td>
     <td><?= $m['quantidade'] ?></td>
     <td><?= date('d/m/Y', strtotime($m['data_movimentacao'])) ?></td>
-    <td><?= htmlspecialchars($m['id_usuario']) ?></td>
+    <td><?= htmlspecialchars($m['usuario_nome'] ?? 'Usuário não encontrado') ?></td> <!-- Exibe o nome do usuário -->
 </tr>
 <?php endwhile; ?>
 <?php else: ?>
