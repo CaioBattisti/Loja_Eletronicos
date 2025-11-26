@@ -46,12 +46,11 @@ CREATE TABLE produtos (
   quantidade_atual INT DEFAULT 0
 );
 
--- Produtos iniciais
--- Produtos iniciais
+-- Produtos iniciais (opcional)
 INSERT INTO produtos (nome, descricao, categoria, tensao, dimensoes, resolucao_tela, capacidade_armazenamento, conectividade, quantidade_minima, quantidade_atual) VALUES
-('Celular', 'Smartphone com tela de 6.5 polegadas', 'Eletrônicos', 'Bivolt', '16x7x0.8 cm', '1080x2400', '128GB', 'Wi-Fi, 4G', 10, 25),
-('Tablet', 'Tablet com tela de 10 polegadas', 'Eletrônicos', 'Bivolt', '24x16x0.7 cm', '1920x1200', '64GB', 'Wi-Fi', 5, 8),
-('Computador', 'Computador desktop com processador Intel i5', 'Informática', 'Bivolt', '40x20x35 cm', 'N/A', '1TB', 'Ethernet, Wi-Fi', 8, 10);
+('Smartphone X', 'Smartphone de última geração', 'Eletrônicos', '5V', '150x70x8mm', '1080x2400', '128GB', 'Wi-Fi, Bluetooth', 10, 50),
+('Notebook Y', 'Notebook para uso profissional', 'Informática', '110V', '350x250x20mm', '1920x1080', '512GB', 'Wi-Fi', 5, 20),
+('TV Z', 'Smart TV 4K', 'Eletrônicos', '220V', '1200x700x50mm', '3840x2160', 'N/A', 'Wi-Fi, HDMI', 2, 10);
 
 -- ================================================
 -- TABELA DE MOVIMENTAÇÕES
@@ -63,18 +62,15 @@ CREATE TABLE movimentacoes (
   quantidade INT NOT NULL,
   data_movimentacao DATE NOT NULL,
   id_usuario INT NOT NULL,
-  FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+  FOREIGN KEY (id_produto) REFERENCES produtos(id_produto) ON DELETE CASCADE,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
--- Movimentações iniciais
+-- Movimentações iniciais (opcional)
 INSERT INTO movimentacoes (id_produto, tipo, quantidade, data_movimentacao, id_usuario) VALUES
-(1, 'entrada', 10, '2024-09-01', 1),
-(1, 'saida', 5, '2024-09-05', 2),
-(2, 'entrada', 3, '2024-09-03', 3),
-(2, 'saida', 1, '2024-09-06', 2),
-(3, 'entrada', 4, '2024-09-04', 1),
-(3, 'saida', 2, '2024-09-07', 3);
+(1, 'entrada', 20, '2023-01-01', 1),
+(2, 'saida', 5, '2023-01-02', 2),
+(3, 'entrada', 10, '2023-01-03', 3);
 
 -- ================================================
 -- CONSULTAS DE TESTE (opcional)
