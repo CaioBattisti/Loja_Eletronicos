@@ -40,5 +40,4 @@ if ($conn->connect_error) {
 // Se o script chegou até aqui, significa que a conexão ($conn) foi bem-sucedida
 // e o objeto de conexão está pronto para ser usado em outras partes do seu sistema
 // (por exemplo, para realizar consultas SQL).
-
 ?>

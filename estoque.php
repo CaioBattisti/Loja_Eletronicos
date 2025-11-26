@@ -99,7 +99,7 @@ $historico = $conn->query("
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Gestão de Estoque - ConstruMais</title>
+<title>Gestão de Estoque - EletroMais</title>
 <link rel="stylesheet" href="style.css">
 <style>
 .msg {

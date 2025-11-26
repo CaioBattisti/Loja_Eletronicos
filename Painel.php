@@ -13,7 +13,7 @@ $usuario = $_SESSION['usuario'];
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Painel - Caio Materiais</title>
+<title>Painel - Caio Eletronicos</title>
 <link rel="stylesheet" href="style.css">
 
 <style>

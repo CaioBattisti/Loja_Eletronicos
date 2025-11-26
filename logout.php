@@ -11,7 +11,7 @@ session_destroy();
 
 // 3. Redireciona o navegador do usuário para a página de login.
 // Após destruir a sessão, o usuário é enviado de volta ao ponto de entrada do sistema.
-header("Location: login.php");
+header("Location: index.php");
 
 // 4. Interrompe a execução do script.
 // Garante que o redirecionamento HTTP seja executado imediatamente e que nenhum conteúdo da página (mesmo que vazio) seja enviado ao navegador.

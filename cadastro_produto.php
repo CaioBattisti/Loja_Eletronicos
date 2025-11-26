@@ -148,9 +148,6 @@ if (isset($_GET['editar'])) {
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

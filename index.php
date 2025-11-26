@@ -59,12 +59,12 @@ if (isset($_POST['email'])) {
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Login - Serjão Materiais</title>
+<title>Login - Caio Eletronicos</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-  <h2>Login - Caio Materiais</h2>
+  <h2>Login - Caio Eletronicos</h2>
   <form method="post">
     <input type="email" name="email" placeholder="E-mail" required><br>
     <input type="password" name="senha" placeholder="Senha" required><br>
